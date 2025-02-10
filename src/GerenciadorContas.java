@@ -31,11 +31,14 @@ public class GerenciadorContas implements TitularInterface {
 
         int escolha = validarEntradaInteira(scanner);
         ContaBancaria novaConta = criarConta(escolha, titular);
-        
+
         switch (escolha) {
-            case 1 -> contasCorrente.add((ContaCorrente) novaConta);
-            case 2 -> contasPoupanca.add((ContaPoupanca) novaConta);
-            default -> System.out.println("\nOpção inválida! Cadastro cancelado.");
+            case 1 ->
+                contasCorrente.add((ContaCorrente) novaConta);
+            case 2 ->
+                contasPoupanca.add((ContaPoupanca) novaConta);
+            default ->
+                System.out.println("\nOpção inválida! Cadastro cancelado.");
         }
 
         System.out.println("\nConta criada com sucesso para " + titular);

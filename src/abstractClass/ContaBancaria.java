@@ -7,8 +7,11 @@ public abstract class ContaBancaria implements ContaInterface {
     protected String titular;
     protected double saldo;
     protected double valor;
+    protected double saldocorrente;
+    protected double saldopoupanca;
 
     protected ContaBancaria(double saldo, String titular, double valor) {
+
         this.titular = titular;
         this.saldo = saldo;
         this.valor = valor;

@@ -11,12 +11,12 @@ public class ContaPoupanca extends ContaBancaria {
     @Override
     public void deposito(double valor) {
         if (valor > 0) {
-            this.saldo += saldo;
-            System.out.println("Depósito realizado com sucesso!");
+            System.out.println("Valor depositado");
+            taxa(valor);
+            saldocorrente = this.saldo;
         } else {
-            System.out.println("Não foi possivel realizar o depósito!");
+            System.out.println("Não foi de positado nenhum valor");
         }
-
     }
 
     @Override
