@@ -4,7 +4,7 @@ import abstractClass.ContaBancaria;
 
 public class ContaPoupanca extends ContaBancaria {
 
-    protected ContaPoupanca(double saldo, String titular, double valor) {
+    public ContaPoupanca(double saldo, String titular, double valor) {
         super(saldo, titular, valor);
     }
 
