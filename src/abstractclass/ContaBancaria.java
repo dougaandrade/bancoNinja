@@ -1,4 +1,4 @@
-package abstractClass;
+package abstractclass;
 
 import interfaces.ContaInterface;
 
@@ -11,22 +11,21 @@ public abstract class ContaBancaria implements ContaInterface {
     protected double saldopoupanca;
 
     protected ContaBancaria(double saldo, String titular, double valor) {
-
         this.titular = titular;
         this.saldo = saldo;
         this.valor = valor;
     }
 
     public String getTitular() {
-        return this.titular;
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
     }
 
     public double getSaldo() {
-        return this.saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        return saldo;
     }
 
     public void taxa(double calculoValor) {

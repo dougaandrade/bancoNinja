@@ -1,10 +1,10 @@
-package tiposContas;
+package tiposcontas;
 
-import abstractClass.ContaBancaria;
+import abstractclass.ContaBancaria;
 
-public class ContaPoupanca extends ContaBancaria {
+public class ContaCorrente extends ContaBancaria {
 
-    public ContaPoupanca(double saldo, String titular, double valor) {
+    public ContaCorrente(double saldo, String titular, double valor) {
         super(saldo, titular, valor);
     }
 
@@ -24,5 +24,4 @@ public class ContaPoupanca extends ContaBancaria {
         System.out.println("Seu saldo é: " + this.saldo);
 
     }
-
 }

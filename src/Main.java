@@ -24,15 +24,17 @@ public class Main {
                         case 1 -> {
                             System.out.print("\nDigite o valor do depósito: ");
                             double valor = inputUser.nextDouble();
-                            gerenciadorContas.getContasCorrente().get(gerenciadorContas.getContasCorrente().size() - 1).deposito(valor);
+                            gerenciadorContas.getContasCorrente().get(gerenciadorContas.getContasCorrente().size() - 1)
+                                    .deposito(valor);
                         }
                         case 2 -> {
-                            gerenciadorContas.getContasCorrente().get(gerenciadorContas.getContasCorrente().size() - 1).consultarSaldo();
+                            gerenciadorContas.getContasCorrente().get(gerenciadorContas.getContasCorrente().size() - 1)
+                                    .consultarSaldo();
                         }
                         case 3 ->
                             System.exit(0);
                         default ->
-                            System.out.println("Opção inválida!");
+                            System.out.println("Opção incorreta!");
                     }
                 }
                 case 2 -> {
@@ -47,10 +49,12 @@ public class Main {
                         case 1 -> {
                             System.out.print("\nDigite o valor do depósito: ");
                             double valor = inputUser.nextDouble();
-                            gerenciadorContas.getContasPoupanca().get(gerenciadorContas.getContasPoupanca().size() - 1).deposito(valor);
+                            // gerenciadorContas.getContasPoupanca().get(gerenciadorContas.getContasPoupanca().size() - 1)
+                            //         .deposito(valor);
                         }
                         case 2 -> {
-                            gerenciadorContas.getContasPoupanca().get(gerenciadorContas.getContasPoupanca().size() - 1).consultarSaldo();
+                            gerenciadorContas.getContasPoupanca().get(gerenciadorContas.getContasPoupanca().size() - 1)
+                                    .consultarSaldo();
                         }
                         case 3 ->
                             System.exit(0);
@@ -58,8 +62,9 @@ public class Main {
                             System.out.println("Opção inválida!");
                     }
                 }
-                case 3 ->
+                case 3 -> {
                     gerenciadorContas.cadastroTitular();
+                }
                 case 4 -> {
                     System.out.println("Obrigado por usar nosso banco. Até mais!");
                     System.exit(0);
@@ -68,5 +73,7 @@ public class Main {
                     System.out.println("Opção inválida!");
             }
         }
+
     }
+
 }

@@ -1,21 +1,19 @@
 
-import abstractClass.ContaBancaria;
+import abstractclass.ContaBancaria;
 import interfaces.TitularInterface;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import tiposContas.ContaCorrente;
-import tiposContas.ContaPoupanca;
+import tiposcontas.ContaCorrente;
+import tiposcontas.ContaPoupanca;
 
 public class GerenciadorContas implements TitularInterface {
 
-    protected final List<ContaCorrente> contasCorrente;
-    protected final List<ContaPoupanca> contasPoupanca;
+    protected final List<ContaBancaria> contas;
     protected final Scanner scanner;
 
     public GerenciadorContas(Scanner scanner) {
-        this.contasCorrente = new ArrayList<>();
-        this.contasPoupanca = new ArrayList<>();
+        this.contas = new ArrayList<>();
         this.scanner = scanner;
     }
 
@@ -34,9 +32,9 @@ public class GerenciadorContas implements TitularInterface {
 
         switch (escolha) {
             case 1 ->
-                contasCorrente.add((ContaCorrente) novaConta);
+                contas.add((ContaCorrente) novaConta);
             case 2 ->
-                contasPoupanca.add((ContaPoupanca) novaConta);
+                contas.add((ContaPoupanca) novaConta);
             default ->
                 System.out.println("\nOpção inválida! Cadastro cancelado.");
         }
@@ -56,7 +54,7 @@ public class GerenciadorContas implements TitularInterface {
         };
     }
 
-    public void menu() {
+    public final void menu() {
         System.out.println("\n________________Banco Nacional de Konohagakure________________\n");
         System.out.println("\nBem-vindo ao nosso banco!\n");
         System.out.println("1 - Conta Corrente");
@@ -66,19 +64,26 @@ public class GerenciadorContas implements TitularInterface {
         System.out.print("Escolha uma opção: ");
     }
 
-    public void menuConta() {
+    public final void menuConta() {
+        System.out.println("\n__________Bem-vindo__________\n");
         System.out.println("\n1 - Depósito");
         System.out.println("2 - Saldo");
         System.out.println("3 - Sair");
         System.out.print("Escolha uma opção: ");
     }
 
-    public List<ContaCorrente> getContasCorrente() {
-        return contasCorrente;
+    protected List<ContaCorrente> getContasCorrente() {
+        return contas.stream()
+                .filter(conta -> conta instanceof ContaCorrente)
+                .map(conta -> (ContaCorrente) conta)
+                .toList();
     }
 
-    public List<ContaPoupanca> getContasPoupanca() {
-        return contasPoupanca;
+    protected List<ContaPoupanca> getContasPoupanca() {
+        return contas.stream()
+                .filter(conta -> conta instanceof ContaPoupanca)
+                .map(conta -> (ContaPoupanca) conta)
+                .toList();
     }
 
     public int validarEntradaInteira(Scanner scanner) {
@@ -90,4 +95,5 @@ public class GerenciadorContas implements TitularInterface {
         scanner.nextLine();
         return numero;
     }
+
 }
