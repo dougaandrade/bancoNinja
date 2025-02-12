@@ -32,9 +32,9 @@ public class GerenciadorContas implements TitularInterface {
 
         switch (escolha) {
             case 1 ->
-                contas.add((ContaCorrente) novaConta);
+                contas.add(novaConta);
             case 2 ->
-                contas.add((ContaPoupanca) novaConta);
+                contas.add(novaConta);
             default ->
                 System.out.println("\nOpção inválida! Cadastro cancelado.");
         }
@@ -60,7 +60,8 @@ public class GerenciadorContas implements TitularInterface {
         System.out.println("1 - Conta Corrente");
         System.out.println("2 - Conta Poupança");
         System.out.println("3 - Cadastro de Conta");
-        System.out.println("4 - Sair");
+        System.out.println("4 - Listar Contas");
+        System.out.println("5 - Sair");
         System.out.print("Escolha uma opção: ");
     }
 
@@ -72,18 +73,21 @@ public class GerenciadorContas implements TitularInterface {
         System.out.print("Escolha uma opção: ");
     }
 
-    protected List<ContaCorrente> getContasCorrente() {
-        return contas.stream()
-                .filter(conta -> conta instanceof ContaCorrente)
-                .map(conta -> (ContaCorrente) conta)
-                .toList();
+    private void contasAtivas() {
+        System.out.println("\nContas ativas:\n");
+        contas.forEach(conta -> System.out.println(conta.getTitular() + " - " + conta.getTipoConta()));
     }
 
-    protected List<ContaPoupanca> getContasPoupanca() {
-        return contas.stream()
-                .filter(conta -> conta instanceof ContaPoupanca)
-                .map(conta -> (ContaPoupanca) conta)
-                .toList();
+    public void listarcontas() {
+        contasAtivas();
+    }
+
+    public List<ContaBancaria> getContasCorrente() {
+        return contas;
+    }
+
+    public List<ContaBancaria> getContasPoupanca() {
+        return contas;
     }
 
     public int validarEntradaInteira(Scanner scanner) {

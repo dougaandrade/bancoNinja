@@ -5,7 +5,7 @@ import abstractclass.ContaBancaria;
 public class ContaCorrente extends ContaBancaria {
 
     public ContaCorrente(double saldo, String titular, double valor) {
-        super(saldo, titular, valor);
+        super(saldo, titular, valor, "Conta Corrente");
     }
 
     @Override

@@ -9,11 +9,13 @@ public abstract class ContaBancaria implements ContaInterface {
     protected double valor;
     protected double saldocorrente;
     protected double saldopoupanca;
+    protected String tipoConta;
 
-    protected ContaBancaria(double saldo, String titular, double valor) {
+    protected ContaBancaria(double saldo, String titular, double valor, String tipoConta) {
         this.titular = titular;
         this.saldo = saldo;
         this.valor = valor;
+        this.tipoConta = tipoConta;
     }
 
     public String getTitular() {
@@ -22,6 +24,10 @@ public abstract class ContaBancaria implements ContaInterface {
 
     public void setTitular(String titular) {
         this.titular = titular;
+    }
+
+    public String getTipoConta() {
+        return tipoConta;
     }
 
     public double getSaldo() {

@@ -49,8 +49,8 @@ public class Main {
                         case 1 -> {
                             System.out.print("\nDigite o valor do depósito: ");
                             double valor = inputUser.nextDouble();
-                            // gerenciadorContas.getContasPoupanca().get(gerenciadorContas.getContasPoupanca().size() - 1)
-                            //         .deposito(valor);
+                            gerenciadorContas.getContasPoupanca().get(gerenciadorContas.getContasPoupanca().size() - 1)
+                                    .deposito(valor);
                         }
                         case 2 -> {
                             gerenciadorContas.getContasPoupanca().get(gerenciadorContas.getContasPoupanca().size() - 1)
@@ -66,6 +66,9 @@ public class Main {
                     gerenciadorContas.cadastroTitular();
                 }
                 case 4 -> {
+                    gerenciadorContas.listarcontas();
+                }
+                case 5 -> {
                     System.out.println("Obrigado por usar nosso banco. Até mais!");
                     System.exit(0);
                 }
