@@ -1,18 +1,15 @@
-## Getting Started
+# BancoNinja
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Bem-vindo ao **BancoNinja**, um projeto desenvolvido para estudo da linguagem Java.
 
-## Folder Structure
+## Estrutura do Projeto
 
-The workspace contains two folders by default, where:
+O projeto está organizado da seguinte forma:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- **src/**: Contém o código-fonte Java.
+- **lib/**: Destinado às dependências do projeto.
+- **bin/**: Arquivos compilados gerados automaticamente.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Sobre
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Este projeto foi criado com o intuito de estudar e praticar Java com LinkedList.
