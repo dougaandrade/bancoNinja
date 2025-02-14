@@ -12,4 +12,4 @@ O projeto está organizado da seguinte forma:
 
 ## Sobre
 
-Este projeto foi criado com o intuito de estudar e praticar Java com LinkedList.
+Este projeto foi criado com o intuito de estudar e praticar Java.
